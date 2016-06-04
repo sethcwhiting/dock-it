@@ -79,7 +79,7 @@ module.exports = function(config) {
     // proxies: {
     //   '/': 'http://localhost:9000/'
     // },
-    // URL root prevent conflicts with the site root
+    // URL root prcomment conflicts with the site root
     // urlRoot: '_karma_'
   });
 };

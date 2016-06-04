@@ -1,5 +1,5 @@
 {
-  "name": "fathom",
+  "name": "historimate",
   "private": true,
   "devDependencies": {
     "autoprefixer-core": "^5.2.1",
@@ -32,5 +32,21 @@
   },
   "engines": {
     "node": ">=0.10.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "bower": "^1.7.9",
+    "connect": "^3.4.1",
+    "cors": "^2.7.1",
+    "ejs": "^2.4.2",
+    "errorhandler": "^1.4.3",
+    "express": "^4.13.4",
+    "express-jwt": "^3.4.0",
+    "jsonwebtoken": "^7.0.0",
+    "lodash": "^4.13.1",
+    "method-override": "^2.3.6",
+    "mongodb": "^2.1.21",
+    "morgan": "^1.7.0",
+    "underscore": "^1.8.3"
   }
 }
