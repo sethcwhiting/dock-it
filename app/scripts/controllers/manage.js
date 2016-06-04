@@ -8,7 +8,7 @@
  * Controller of the fathomApp
  */
 angular.module('fathomApp')
-  .controller('ManageCtrl', function ($scope, $http, $cookieStore, $route, locations) {
+  .controller('ManageCtrl', function ($scope, $http, $cookieStore, $route) {
 
     $scope.goHome = function() {
       $scope.mode = 'show-bills';
@@ -75,21 +75,6 @@ angular.module('fathomApp')
           $scope.comments = res;
         }
       );
-    };
-
-    $scope.getLocations = function() {
-      if ($scope.singlecomment.location) {
-        locations.getLocations($scope.singlecomment.location).then(function(res) {
-          $scope.commentLocations = res.data.results;
-        });
-      } else {
-        $scope.commentLocations = '';
-      }
-    };
-
-    $scope.setLoc = function(loc) {
-      $scope.singlecomment.location = loc;
-      $scope.commentLocations = '';
     };
 
     $scope.editcomment = function(ev) {
