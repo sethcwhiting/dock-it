@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc service
- * @name historimateApp.authinterceptor
+ * @name fathomApp.authinterceptor
  * @description
  * # authinterceptor
- * Factory in the historimateApp.
+ * Factory in the fathomApp.
  */
-angular.module('historimateApp')
+angular.module('fathomApp')
   .factory('authInterceptor', function ($rootScope, $q, $window, $cookieStore) {
     return {
       request: function (config) {

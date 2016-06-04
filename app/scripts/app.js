@@ -22,16 +22,23 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
+        templateUrl: 'views/manage.html',
+        controller: 'ManageCtrl',
+        controllerAs: 'manage'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
+      .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl',
+        controllerAs: 'login'
       })
       .otherwise({
         redirectTo: '/'
       });
-  });
+  }).run(function ($rootScope, $location, $window, $cookieStore) {
+    $rootScope.$on( '$locationChangeStart', function() {
+      var token = $cookieStore.get('token');
+      if(token === undefined || token.length < 10){
+        $location.path('/login');
+      }
+    });
+});
