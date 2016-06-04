@@ -1,0 +1,39 @@
+<div class="text-center">
+  <h1>Editing {{selectedComment.title}}</h1>
+  <h3>On {{selectedBill.title}}</h3>
+  <hr>
+</div>
+
+<form>
+
+  <div class="row">
+    <div class="form-group col-sm-6 col-sm-offset-3">
+      <label>Title</label>
+      <input type="text" class="form-control" ng-model="selectedComment.title" placeholder="Title" />
+    </div>
+    <div class="form-group col-sm-6 col-sm-offset-3">
+      <label>Date</label>
+      <input type="date" class="form-control" ng-model="selectedComment.date" placeholder="Date" />
+    </div>
+    <div class="form-group col-sm-6 col-sm-offset-3">
+      <label>Location</label>
+      <input type="text" class="form-control" ng-model="selectedComment.location" ng-change="getLocations()" placeholder="Location" />
+      <table class="list-unstyled table table-striped table-hover">
+        <tr ng-repeat = "loc in commentLocations">
+          <td>
+            <a ng-click="setLoc(loc.formatted_address)">{{loc.formatted_address}}</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="form-group col-sm-6 col-sm-offset-3">
+      <label>Source</label>
+      <input type="text" class="form-control" ng-model="selectedComment.source" placeholder="Source" />
+    </div>
+  </div>
+  <button class="btn btn-default" ng-click="goHome()">Cancel</button>
+  <button class="btn btn-success" ng-click="updateComment()">Submit</button>
+  <hr>
+  <button class="btn btn-danger pull-right" ng-click="deleteComment()">Delete</button>
+
+</form>

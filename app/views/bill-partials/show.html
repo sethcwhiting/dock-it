@@ -1,0 +1,24 @@
+<div class="text-center">
+  <h1>Bills</h1>
+  <p>Select a bill to edit, or create a new bill.</p>
+  <hr>
+</div>
+
+<a class="btn btn-success pull-right" ng-click="newBill()">
+  <span class="glyphicon glyphicon-plus"></span> New Bill
+</a>
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Created</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="bill in bills">
+      <td><a ng-click="editBill(bill)">{{bill.title}}</a></td>
+      <td><a ng-click="editBill(bill)">{{bill.createdAt | date:'MM/dd/yyyy'}}</a></td>
+    </tr>
+  </tbody>
+</table>

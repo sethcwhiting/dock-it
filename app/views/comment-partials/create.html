@@ -1,0 +1,29 @@
+<form class="col-sm-6">
+  <h1>New Comment</h1>
+  <h3>For {{selectedBill.title}}</h3>
+  <div class="form-group">
+    <label>Title</label>
+    <input type="text" class="form-control" ng-model="singleComment.title" placeholder="Title" />
+  </div>
+  <div class="form-group">
+    <label>Date</label>
+    <input type="date" class="form-control" ng-model="singleComment.date" placeholder="Date" />
+  </div>
+  <div class="form-group">
+    <label>Location</label>
+    <input type="text" class="form-control" ng-model="singleComment.location" ng-change="getLocations()" placeholder="Location" />
+    <table class="list-unstyled table table-striped table-hover">
+      <tr ng-repeat = "loc in commentLocations">
+        <td>
+          <a ng-click="setLoc(loc.formatted_address)">{{loc.formatted_address}}</a>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="form-group">
+    <label>Source</label>
+    <input type="text" class="form-control" ng-model="singleComment.source" placeholder="Source" />
+  </div>
+  <button class="btn btn-default" ng-click="goHome()">Cancel</button>
+  <button class="btn btn-success" ng-click="createComment()">Submit</button>
+</form>

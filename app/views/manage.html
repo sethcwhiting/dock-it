@@ -1,0 +1,20 @@
+<div ng-show="mode == 'show-bills'">
+  <div ng-include="'views/bill-partials/show.html'"></div>
+</div>
+
+<div ng-show="mode == 'create-bill'">
+  <div ng-include="'views/bill-partials/create.html'"></div>
+</div>
+
+<div ng-show="mode == 'edit-bill'">
+  <div ng-include="'views/bill-partials/edit.html'"></div>
+</div>
+
+
+<div ng-show="mode == 'create-comment'">
+  <div ng-include="'views/comment-partials/create.html'"></div>
+</div>
+
+<div ng-show="mode == 'edit-comment'">
+  <div ng-include="'views/comment-partials/edit.html'"></div>
+</div>

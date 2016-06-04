@@ -1,0 +1,42 @@
+<div class="text-center">
+  <h1>Editing {{selectedBill.title}}</h1>
+  <p>Change the title, edit comments, or add new comments.</p>
+  <hr>
+</div>
+
+<form>
+
+  <div class="row">
+    <div class="form-group col-sm-6 col-sm-offset-3">
+      <label>Title</label>
+      <input type="text" class="form-control" ng-model="selectedBill.title" placeholder="Title" />
+    </div>
+  </div>
+  <hr>
+
+  <a class="btn btn-success pull-right" ng-click="newComment()">
+    <span class="glyphicon glyphicon-plus"></span> New Comment
+  </a>
+
+
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Comment Date</th>
+        <th>Created</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="comment in comments">
+        <td><a ng-click="editComment(comment)">{{comment.title}}</a></td>
+        <td><a ng-click="editComment(comment)">{{comment.date | date:'MM/dd/yyyy'}}</a></td>
+        <td><a ng-click="editComment(comment)">{{comment.createdAt | date:'MM/dd/yyyy'}}</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="btn btn-default" ng-click="goHome()">Cancel</button>
+  <button class="btn btn-success" ng-click="updateBill()">Submit</button>
+  <hr>
+  <button class="btn btn-danger pull-right" ng-click="deleteBill()">Delete</button>
+</form>
