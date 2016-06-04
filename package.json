@@ -32,5 +32,24 @@
   },
   "engines": {
     "node": ">=0.10.0"
-  }
+  },
+  "description": "This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular) version 0.15.1.",
+  "version": "1.0.0",
+  "main": "Gruntfile.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SethCWhiting/fathom.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SethCWhiting/fathom/issues"
+  },
+  "homepage": "https://github.com/SethCWhiting/fathom#readme"
 }
